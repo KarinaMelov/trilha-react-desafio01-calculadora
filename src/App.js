@@ -46,8 +46,36 @@ const App = () => {
       setCurrentNumber(String(sum))
       setOperation('')
     }
+    
 
   }
+
+  const handleDivideNumbers = () => {
+    if (firstNumber === '0'){
+    setFirstNumber(String(currentNumber));
+    setCurrentNumber('0')
+    setOperation('/')
+    } else {
+      const div = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(div))
+      setOperation('')
+    }
+
+  }
+
+  const handleMultiplyNumbers = () => {
+    if (firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('*')
+    } else {
+      const multiply = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(multiply))
+      setOperation('')
+    }
+    }
+  }
+
 
   const handleEquals = () => {
 
@@ -58,6 +86,12 @@ const App = () => {
             break;
           case '-':
             handleMinusNumbers();
+            break;
+          case '*':
+            handleMultiplyNumbers();
+            break;
+          case '/':
+            handledivideNumbers();
             break;
           default: 
             break;
